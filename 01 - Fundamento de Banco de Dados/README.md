@@ -1,4 +1,4 @@
-# 🐬 Capítulo 1 - Fundamento de Banco de Dados 🐬 
+# 🐬 Capítulo 1 - Fundamentos de Banco de Dados 🐬 
 
 1. [Aula 01: Introdução ao Banco de Dados](#aula-01-introdução-ao-banco-de-dados)  
    1.1 [Estrutura de um Banco de Dados](#estrutura-de-um-banco-de-dados)  
