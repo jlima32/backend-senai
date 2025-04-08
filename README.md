@@ -1,1 +1,1 @@
-1. [Capítulo 01: Fundamentos de Banco de Dados](./01%20-%20Fundamento%20de%20Banco%20de%20Dados/README.md)  
+1. [Capítulo 01: Fundamentos de Banco de Dados](./01%20-%20Fundamento%20de%20Banco%20de%20Dados/)  

@@ -4,6 +4,12 @@
    1.1 [Estrutura de um Banco de Dados](#estrutura-de-um-banco-de-dados)  
    1.2 [MER - Modelo Entidade Relacional](#mer---modelo-entidade-relacional)  
    1.3 [DER Diagrama Entidade Realcional](#der---diagrama-entidade-relacional)  
+2. [Aula 02: Comandos Básicos](#aula-02-comandos-básicos )  
+   2.1 [Criando o banco de dados](#criando-o-banco-de-dados)  
+   2.2 [Selecionando o banco de dados](#selecionando-o-banco-de-dados)  
+   2.3 [Criando tabelas](#criando-tabelas)  
+   2.4 [Inserindo registros](#inserindo-registros)  
+   2.5 [Exercício](#exercício-1)  
 
 ## Aula 01: Introdução ao Banco de Dados
 
@@ -46,4 +52,52 @@ Faça um MER para um hortifruti, com as tabelas: produto, funcionário e cliente
 
 ![Exemplo DER](ExemploDER.png)
 
+## Aula 02: Comandos Básicos
 
+### Criando o banco de dados
+
+```sql
+CREATE DATABASE bancoteste
+```
+
+### Selecionando o banco de dados
+```sql
+USE bancoteste
+```
+
+### Criando tabelas
+```sql
+CREATE TABLE fornecedores (
+   codigo int auto_increment,
+   nome varchar(50) not null,
+   email varchar(50) not null,
+   PRIMARY KEY(codigo)
+);
+```
+
+### Inserindo registros
+```sql
+INSERT INTO fornecedores (nome, email) VALUES ('Fiat','fiat@gmail.com');
+INSERT INTO fornecedores (nome, email) VALUES ('GM','gm@live.com');
+INSERT INTO fornecedores (nome, email) VALUES ('Ford', 'ford@gmail.com');
+```
+
+### Exercício
+Criar uma tabela chamada carros, com os campos: id, modelo, ano, cor, placa, correceria.
+
+```sql
+USE bancoteste;
+
+CREATE TABLE carros (
+   id int auto_increment,
+   modelo varchar(15) not null,
+   ano int not null,
+   cor varchar(15) not null,
+   placa varchar(8),
+   carroceria varchar(10),
+   idFornecedor int,
+   PRIMARY KEY(id),
+   FOREIGN KEY(idFornecedor) REFERENCES fornecedores(codigo)
+);
+
+```
