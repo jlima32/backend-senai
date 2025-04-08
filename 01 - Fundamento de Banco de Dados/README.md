@@ -3,6 +3,7 @@
 1. [Aula 01: Introdução ao Banco de Dados](#aula-01-introdução-ao-banco-de-dados)  
    1.1 [Estrutura de um Banco de Dados](#estrutura-de-um-banco-de-dados)  
    1.2 [MER - Modelo Entidade Relacional](#mer---modelo-entidade-relacional)  
+   1.3 [DER Diagrama Entidade Realcional](#der---diagrama-entidade-relacional)  
 
 ## Aula 01: Introdução ao Banco de Dados
 
@@ -38,4 +39,11 @@ Quando desenhamos a estrutura da nossa base de dados chamamos de **MER - Modelo 
 
 ### Exercício
 
-Faça um MER para um hortifruti, com as tabealas: produto, funcionário e cliente.
+Faça um MER para um hortifruti, com as tabelas: produto, funcionário e cliente.
+
+### DER - Diagrama Entidade Relacional
+É uma representação gráfica que mostra como os elementos de um sistema se relacionam entre si.
+
+![Exemplo DER](ExemploDER.png)
+
+
