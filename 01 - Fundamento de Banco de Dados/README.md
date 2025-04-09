@@ -80,10 +80,14 @@ CREATE TABLE fornecedores (
 INSERT INTO fornecedores (nome, email) VALUES ('Fiat','fiat@gmail.com');
 INSERT INTO fornecedores (nome, email) VALUES ('GM','gm@live.com');
 INSERT INTO fornecedores (nome, email) VALUES ('Ford', 'ford@gmail.com');
+INSERT INTO fornecedores (nome, email) VALUES ('Honda', 'honda@gmail.com');
+INSERT INTO fornecedores (nome, email) VALUES ('Mitsubishi', 'mitsubishi@gmail.com');
 ```
 
 ### Exercício
 Criar uma tabela chamada carros, com os campos: id, modelo, ano, cor, placa, correceria.
+
+Popular a tabela de carros
 
 ```sql
 USE bancoteste;
@@ -100,4 +104,24 @@ CREATE TABLE carros (
    FOREIGN KEY(idFornecedor) REFERENCES fornecedores(codigo)
 );
 
+INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('Mobi', 2025, 'Preto','', 'Hatch', 1);
+INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('Punto', 2012, 'Cinza', '', 'Hatch', 1);
+INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('Strada', 2006, 'Preto', '', 'Utilitário', 1);
+INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('Onix',2023, 'Branco', '', 'Hatch', 2 );
+INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('Cruze', 2022, 'Azul', '', 'Sedan', 2);
+INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('Camaro', 2018, 'Amarelo', '', 'Sedan', 2);
+INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('Fiesta', 2007, 'Azul', '', 'Sedan', 3);
+INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('Mustang', 2024, 'Amarelo', '','Sedan', 3);
+INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('Ka', 2007, 'Branco', '','Sedan', 3);
+INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('City', 2022, 'Cinza', '','Sedan', 4);
+INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('Civic', 2019, 'Preto', '', 'Sedan', 4);
+INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('HR-V', 2019, 'Preto', '', 'SUV', 4);
+INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('Lancer', 2006, 'Azul', '', 'Sedan', 5);
+INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('Eclipse', 1995, 'Preto', '', 'Hatch', 5);
+INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('Lancer', 2006, 'Azul', '', 'Sedan', 5);
+INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('3000GT', 1993, 'Vermelho', '', 'Hatch', 5);
+
+
 ```
+
+
