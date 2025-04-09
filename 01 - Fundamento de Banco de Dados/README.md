@@ -120,8 +120,23 @@ INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES 
 INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('Eclipse', 1995, 'Preto', '', 'Hatch', 5);
 INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('Lancer', 2006, 'Azul', '', 'Sedan', 5);
 INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('3000GT', 1993, 'Vermelho', '', 'Hatch', 5);
+```
 
+### Listando os registros
 
+```sql
+SELECT * FROM carros
+```
+#### Ordenando a consulta
+
+##### Ordem crescente
+```sql
+SELECT * FROM carros ORDER BY modelo ASC
+```
+
+##### Ordem decrescente
+```sql
+SELECT * FROM carros ORDER BY modelo DESC
 ```
 
 
