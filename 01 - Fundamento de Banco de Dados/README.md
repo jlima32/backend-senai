@@ -10,7 +10,10 @@
    2.3 [Criando tabelas](#criando-tabelas)  
    2.4 [Inserindo registros](#inserindo-registros)  
    2.5 [Exercício](#exercício-1)  
-
+   2.6 [Listando os registros](#listando-os-registros)  
+   2.7 [Buscando entre os registros](#buscando-registros)  
+   2.8 [Alterando uma tabela](#alterando-uma-tabela)  
+   
 ## Aula 01: Introdução ao Banco de Dados
 
 Um banco de dados é uma coleção de dados inter-relacionados, sempre que for possível agrupar informações que se relacionam e tratam de um mesmo assunto, posso dizer que tenho um banco de dados.
@@ -138,5 +141,39 @@ SELECT * FROM carros ORDER BY modelo ASC
 ```sql
 SELECT * FROM carros ORDER BY modelo DESC
 ```
+
+##### Limitando os resultados da consulta
+```sql
+SELECT * FROM carros LIMIT 2,5 
+```
+>**2** é o índice inicial
+>**5** número de resultados que precisamos
+
+### Buscando registros
+```sql
+
+-- retorna os carros que começam com c
+SELECT * FROM carros WHERE modelo LIKE 'c%'
+
+-- retorna carros em que o ínicio da placa é 5
+SELECT * FROM carros WHERE placa LIKE '____5' 
+
+-- retorna carros em que o final da placa é 2
+SELECT * FROM carros WHERE placa LIKE '%2' 
+
+-- Retorna carros em que a penúltima letra é t
+SELECT * FROM carros WHERE modelo LIKE '%t_' 
+```
+
+### Alterando uma tabela
+
+#### Adicionar coluna
+```sql
+ALTER TABLE carros 
+	ADD COLUMN valor DOUBLE;
+```
+
+
+
 
 
