@@ -163,6 +163,29 @@ SELECT * FROM carros WHERE placa LIKE '%2'
 
 -- Retorna carros em que a penúltima letra é t
 SELECT * FROM carros WHERE modelo LIKE '%t_' 
+
+-- Retorna carros que o valor é maior que 30000
+SELECT * FROM carros WHERE valor > 30000
+
+-- Retorna carros que o valor é menor que 30000
+SELECT * FROM carros WHERE valor < 30000
+
+-- Retorna carros que o valor é igual a 30000
+SELECT * FROM carros WHERE valor = 30000
+
+-- Retorna carros que o valor é entre 30000 e 50000
+SELECT * FROM carros WHERE valor between 30000 and 50000
+
+-- Retorna carro de menor valor
+SELECT MIN(valor) FROM carros
+
+-- Retorna carro de maior valor
+SELECT MAX(valor) FROM carros
+```
+
+#### Somando os valores de um campo
+```sql
+SELECT SUM(valor) FROM carros
 ```
 
 ### Alterando uma tabela
