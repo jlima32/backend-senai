@@ -13,6 +13,10 @@ public class Exemplo01 {
 		{
 			System.out.println("O número é maior que 5!");
 		}
+		else
+		{
+			System.out.println("O número não é maior que 5!");
+		}
 		System.out.println("Fim do programa!");
 	}
 

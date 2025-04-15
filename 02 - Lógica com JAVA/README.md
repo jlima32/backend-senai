@@ -1,10 +1,11 @@
 #  Capítulo 2 - Lógica com JAVA 
 
-1. [Aula 01: Variáveis](#aula-01-introdução-ao-banco-de-dados)  
+1. [Aula 01: Variáveis](#)  
    1.1 [Tipos de variáveis](#) 
+   1.2 [Nome de variáveis](#) 
 2. [Aula 02: ](#)  
-   2.1 [Criando o banco de dados](#criando-o-banco-de-dados)  
-2. [Aula 03: Desvios Condicionais](#aula-03-desvios-condicionais)  
+   2.1 [](#)  
+3. [Aula 03: Desvios Condicionais](#aula-03-desvios-condicionais)  
    3.1 [if](#if)  
    
    
@@ -62,6 +63,38 @@ Fim do programa!
 
 ### else
 
+:floppy_disk: condicional/Exemplo01.java
+```java
+package condicional;
+
+import java.util.Scanner;
+
+public class Exemplo01 {
+
+	public static void main(String[] args) {
+		int n;
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Digite um número: ");
+		n = sc.nextInt();
+		if (n > 5)
+		{
+			System.out.println("O número é maior que 5!");
+		}
+		else
+		{
+			System.out.println("O número não é maior que 5!");
+		}
+		System.out.println("Fim do programa!");
+	}
+
+}
+```
+:computer: **Resultado:**
+```
+Digite um número: 5
+O número não é maior que 5!
+Fim do programa!
+```
 
 ### if aninhado
 
