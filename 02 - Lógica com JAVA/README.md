@@ -1,202 +1,73 @@
 #  Capítulo 2 - Lógica com JAVA 
 
-1. [Aula 01: Introdução ao Banco de Dados](#aula-01-introdução-ao-banco-de-dados)  
-   1.1 [Estrutura de um Banco de Dados](#estrutura-de-um-banco-de-dados)  
-   1.2 [MER - Modelo Entidade Relacional](#mer---modelo-entidade-relacional)  
-   1.3 [DER Diagrama Entidade Realcional](#der---diagrama-entidade-relacional)  
-2. [Aula 02: Comandos Básicos](#aula-02-comandos-básicos )  
+1. [Aula 01: Variáveis](#aula-01-introdução-ao-banco-de-dados)  
+   1.1 [Tipos de variáveis](#) 
+2. [Aula 02: ](#)  
    2.1 [Criando o banco de dados](#criando-o-banco-de-dados)  
-   2.2 [Selecionando o banco de dados](#selecionando-o-banco-de-dados)  
-   2.3 [Criando tabelas](#criando-tabelas)  
-   2.4 [Inserindo registros](#inserindo-registros)  
-   2.5 [Exercício](#exercício-1)  
-   2.6 [Listando os registros](#listando-os-registros)  
-   2.7 [Buscando entre os registros](#buscando-registros)  
-   2.8 [Alterando uma tabela](#alterando-uma-tabela)  
+2. [Aula 03: Desvios Condicionais](#aula-03-desvios-condicionais)  
+   3.1 [if](#if)  
    
-## Aula 01: Introdução ao Banco de Dados
+   
+## Aula 01: 
 
-Um banco de dados é uma coleção de dados inter-relacionados, sempre que for possível agrupar informações que se relacionam e tratam de um mesmo assunto, posso dizer que tenho um banco de dados.
+## Aula 02: 
 
-Já um sistema de gerenciamento de banco de dados é um software que possui recursos capazes de manipular as informações do banco de dados e interagir com o usuário.
+## Aula 03: Desvios Condicionais
+São comandos utilizados em uma linguagem de programação para determinar qual a ordem e quais comandos devem ser executados pelo programa em uma dada condição.
 
+### if
+Utilizamos o if quando desejamos que o programa teste uma ou mais condições e execute um ou outro comando de acordo com o resultado deste teste.
 
->**Exemplos de SGBDs:** Oracle, SQL Server, DB2, PostgreSQL, MySQL, entre outros.
+```java
+// A sintaxe de if é a seguinte:
 
-### Estrutura de um Banco de Dados
+if (condicao)
+   comando;
 
->Base de dados < Tabela < Registro < Coluna (datatype)
+if (condicao)
+{
+   comando1;
+   comando2;
+}
+```
+:floppy_disk: condicional/Exemplo01.java
+```java
+package condicional;
 
->Banco dados < Tabela < Linha < Campo
+import java.util.Scanner;
 
-**Campos:** São a parte fundamental de uma base de dados.
+public class Exemplo01 {
 
-|DADO  |TIPO   |
-| ------------ | ------------ |
-|Texto   |VARCHAR(n)   |
-|Caractere   |CHAR(n)|
-|Data |DATE   |
-|Data e Hora|DATETIME |
-|Inteiro|INT |
-|Decimal|DECIMAL   |
-|Ponto flutuante|FLOAT   |
-|Ponto mais casas|DOUBLE   |
-|Booleano| BOOLEAN|
+	public static void main(String[] args) {
+		int n;
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Digite um número: ");
+		n = sc.nextInt();
+		if (n > 5)
+		{
+			System.out.println("O número é maior que 5!");
+		}
+		System.out.println("Fim do programa!");
+	}
 
-### MER - Modelo Entidade Relacional
-Quando desenhamos a estrutura da nossa base de dados chamamos de **MER - Modelo Entidade Relacional**, onde desenhamos o modelo do nosso banco de dados expondo todos os relacionamentos entre as tabelas.
+}
 
-### Exercício
-
-Faça um MER para um hortifruti, com as tabelas: produto, funcionário e cliente.
-
-### DER - Diagrama Entidade Relacional
-É uma representação gráfica que mostra como os elementos de um sistema se relacionam entre si.
-
-![Exemplo DER](ExemploDER.png)
-
-## Aula 02: Comandos Básicos
-
-### Criando o banco de dados
-
-```sql
-CREATE DATABASE bancoteste
+```
+:computer: **Resultado:**
+```
+Digite um número: 10
+O número é maior que 5!
+Fim do programa!
 ```
 
-### Selecionando o banco de dados
-```sql
-USE bancoteste
-```
-
-### Criando tabelas
-```sql
-CREATE TABLE fornecedores (
-   codigo int auto_increment,
-   nome varchar(50) not null,
-   email varchar(50) not null,
-   PRIMARY KEY(codigo)
-);
-```
-
-### Inserindo registros
-```sql
-INSERT INTO fornecedores (nome, email) VALUES ('Fiat','fiat@gmail.com');
-INSERT INTO fornecedores (nome, email) VALUES ('GM','gm@live.com');
-INSERT INTO fornecedores (nome, email) VALUES ('Ford', 'ford@gmail.com');
-INSERT INTO fornecedores (nome, email) VALUES ('Honda', 'honda@gmail.com');
-INSERT INTO fornecedores (nome, email) VALUES ('Mitsubishi', 'mitsubishi@gmail.com');
-```
-
-### Exercício
-Criar uma tabela chamada carros, com os campos: id, modelo, ano, cor, placa, correceria.
-
-Popular a tabela de carros
-
-```sql
-USE bancoteste;
-
-CREATE TABLE carros (
-   id int auto_increment,
-   modelo varchar(15) not null,
-   ano int not null,
-   cor varchar(15) not null,
-   placa varchar(8),
-   carroceria varchar(10),
-   idFornecedor int,
-   PRIMARY KEY(id),
-   FOREIGN KEY(idFornecedor) REFERENCES fornecedores(codigo)
-);
-
-INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('Mobi', 2025, 'Preto','', 'Hatch', 1);
-INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('Punto', 2012, 'Cinza', '', 'Hatch', 1);
-INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('Strada', 2006, 'Preto', '', 'Utilitário', 1);
-INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('Onix',2023, 'Branco', '', 'Hatch', 2 );
-INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('Cruze', 2022, 'Azul', '', 'Sedan', 2);
-INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('Camaro', 2018, 'Amarelo', '', 'Sedan', 2);
-INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('Fiesta', 2007, 'Azul', '', 'Sedan', 3);
-INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('Mustang', 2024, 'Amarelo', '','Sedan', 3);
-INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('Ka', 2007, 'Branco', '','Sedan', 3);
-INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('City', 2022, 'Cinza', '','Sedan', 4);
-INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('Civic', 2019, 'Preto', '', 'Sedan', 4);
-INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('HR-V', 2019, 'Preto', '', 'SUV', 4);
-INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('Lancer', 2006, 'Azul', '', 'Sedan', 5);
-INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('Eclipse', 1995, 'Preto', '', 'Hatch', 5);
-INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('Lancer', 2006, 'Azul', '', 'Sedan', 5);
-INSERT INTO carros ( modelo, ano, cor, placa, carroceria, idFornecedor ) VALUES ('3000GT', 1993, 'Vermelho', '', 'Hatch', 5);
-```
-
-### Listando os registros
-
-```sql
-SELECT * FROM carros
-```
-#### Ordenando a consulta
-
-##### Ordem crescente
-```sql
-SELECT * FROM carros ORDER BY modelo ASC
-```
-
-##### Ordem decrescente
-```sql
-SELECT * FROM carros ORDER BY modelo DESC
-```
-
-##### Limitando os resultados da consulta
-```sql
-SELECT * FROM carros LIMIT 2,5 
-```
->**2** é o índice inicial
->**5** número de resultados que precisamos
-
-### Buscando registros
-```sql
-
--- retorna os carros que começam com c
-SELECT * FROM carros WHERE modelo LIKE 'c%'
-
--- retorna carros em que o ínicio da placa é 5
-SELECT * FROM carros WHERE placa LIKE '____5' 
-
--- retorna carros em que o final da placa é 2
-SELECT * FROM carros WHERE placa LIKE '%2' 
-
--- Retorna carros em que a penúltima letra é t
-SELECT * FROM carros WHERE modelo LIKE '%t_' 
-
--- Retorna carros que o valor é maior que 30000
-SELECT * FROM carros WHERE valor > 30000
-
--- Retorna carros que o valor é menor que 30000
-SELECT * FROM carros WHERE valor < 30000
-
--- Retorna carros que o valor é igual a 30000
-SELECT * FROM carros WHERE valor = 30000
-
--- Retorna carros que o valor é entre 30000 e 50000
-SELECT * FROM carros WHERE valor between 30000 and 50000
-
--- Retorna carro de menor valor
-SELECT MIN(valor) FROM carros
-
--- Retorna carro de maior valor
-SELECT MAX(valor) FROM carros
-```
-
-#### Somando os valores de um campo
-```sql
-SELECT SUM(valor) FROM carros
-```
-
-### Alterando uma tabela
-
-#### Adicionar coluna
-```sql
-ALTER TABLE carros 
-	ADD COLUMN valor DOUBLE;
-```
+### else
 
 
+### if aninhado
 
 
+### switch
+
+
+### break
 
