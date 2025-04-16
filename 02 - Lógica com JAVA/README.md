@@ -57,7 +57,7 @@ Os operadores lógicos em Java são usados para combinar expressões booleanas (
 | Operador | Nome            | Exemplo        |
 |----------|------------------|----------------|
 | `&&`     | E lógico (AND)   | `cond1 && cond2` |
-| `||`     | OU lógico (OR)   | `cond1 || cond2` |
+| ``     | OU lógico (OR)   | `cond1 || cond2` |
 | `!`      | NÃO lógico (NOT) | `!cond`         |
 
 ### Operadores Unários de Incremento e Decremento
