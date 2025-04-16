@@ -6,8 +6,10 @@
 2. [Aula 02: ](#)  
    2.1 [](#)  
 3. [Aula 03: Desvios Condicionais](#aula-03-desvios-condicionais)  
-   3.1 [if](#if)  
-   
+   3.1 [if](#if)    
+   3.2 [else](#else)    
+   3.3 [Exercícios](#exercícios)    
+   3.4 [if Aninhado](#if-aninhado)    
    
 ## Aula 01: 
 
@@ -97,7 +99,7 @@ O número não é maior que 5!
 Fim do programa!
 ```
 
-#### Exercícios
+### Exercícios
 
 1. Faça um programa onde o usuário entre com dois números e o programa informe se os números são iguais ou diferentes.
 
@@ -192,8 +194,48 @@ Digite um número:
 O número digitado é ímpar
 ```
 
-### if aninhado
+### if Aninhado
+Complementando a estrutura if/else, temos o operador else if. Ele permite incluir condições adicionais na lógica de decisão, possibilitando um controle mais preciso sobre os diferentes caminhos que o programa pode seguir.
 
+
+:floppy_disk: condicional/Exemplo01.java
+```java
+package condicional;
+
+import java.util.Scanner;
+
+public class Exemplo01 {
+
+	public static void main(String[] args) {
+		int n;
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Digite um número: ");
+		n = sc.nextInt();
+		if (n > 5)
+		{
+			System.out.println("O número é maior que 5!");
+		}
+		else if(n < 5)
+		{
+			System.out.println("O número é menor que 5!");
+		}
+		else
+		{
+			System.out.println("O número é igual a 5");
+		}
+		System.out.println("Fim do programa!");
+	}
+
+}
+```
+:computer: **Resultado:**
+```
+Digite um número: 5
+O número é igual a 5
+Fim do programa!
+```
+
+### Exercícios
 
 ### switch
 
